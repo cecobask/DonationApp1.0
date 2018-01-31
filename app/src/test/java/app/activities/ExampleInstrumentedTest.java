@@ -1,4 +1,4 @@
-package ie.bask.donation10;
+package app.activities;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
