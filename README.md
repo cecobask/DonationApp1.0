@@ -4,7 +4,7 @@ First attempt with mobile apps development. This is a simple app to keep track o
 
 ## Getting Started
 
-In order to open the website you should:
+In order to open the app you should:
 * Click on Clone or Download button
 * Download ZIP
 * Extract ZIP file
