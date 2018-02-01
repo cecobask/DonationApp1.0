@@ -21,6 +21,7 @@
         </activity>
         <activity
             android:name="ie.app.activities.Report"
-            android:label="@string/title_activity_report"/>
+            android:label="@string/title_activity_report"
+            android:theme="@style/AppTheme" />
     </application>
 </manifest>
