@@ -1,26 +1,16 @@
 package ie.app.activities;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ArrayAdapter;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 import ie.app.R;
 
 
-public class Report extends AppCompatActivity
+public class Report extends Base
 {
     ListView listView;
-
-    static final String[] numbers = new String[] {
-            "Amount, Pay method",
-            "10,     Direct",
-            "100,    PayPal",
-            "1000,   Direct",
-            "10,     PayPal",
-            "5000,   PayPal"};
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -29,25 +19,15 @@ public class Report extends AppCompatActivity
         setContentView(R.layout.activity_report);
 
         listView = (ListView) findViewById(R.id.reportList);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,  android.R.layout.simple_list_item_1, numbers);
+        DonationAdapter adapter = new DonationAdapter(this,  donations);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(Report.this,"You Selected Row [" + position + "] For Donation Data "
+                        + donations.get(position),Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_donate, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        switch (item.getItemId())
-        {
-            case R.id.menuDonate : startActivity (new Intent(this, Donate.class));
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

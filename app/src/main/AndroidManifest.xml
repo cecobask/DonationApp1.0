@@ -23,5 +23,9 @@
             android:name="ie.app.activities.Report"
             android:label="@string/title_activity_report"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activities.Base"
+            android:label="Base"
+            android:theme="@style/AppTheme" />
     </application>
 </manifest>
