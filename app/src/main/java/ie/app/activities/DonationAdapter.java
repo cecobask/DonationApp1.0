@@ -36,6 +36,7 @@ class DonationAdapter extends ArrayAdapter<Donation>
 
         amountView.setText("$" + donation.amount);
         methodView.setText(donation.method);
+        view.setId(donation.id);
 
         return view;
     }

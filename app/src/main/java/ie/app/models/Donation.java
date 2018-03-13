@@ -2,6 +2,7 @@ package ie.app.models;
 
 public class Donation
 {
+    public int id;
     public int    amount;
     public String method;
 
@@ -11,11 +12,12 @@ public class Donation
         this.method = method;
     }
 
-    @Override
+    public Donation() {
+        this.amount = 0;
+        this.method = "";
+    }
+
     public String toString() {
-        return "Donation{" +
-                "amount=" + amount +
-                ", method='" + method + '\'' +
-                '}';
+        return id + ", " + amount + ", " + method;
     }
 }
